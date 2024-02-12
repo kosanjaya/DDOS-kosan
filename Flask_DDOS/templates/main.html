@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDOS PBL-RKS 210</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- External Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/homepage_styles/homepage.css') }}">
+    <script src="{{ url_for('static', filename='assets/js/homepage/animation.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='assets/js/homepage/api.js') }}" defer></script>
+</head>
+
+<body>
+    <div class="overlay display-none"></div>
+
+    <section class="container">
+        <nav class="navbar split">
+            <div class="navbar-logo">
+                <img src="{{ url_for('static', filename='assets/images/homepage_assets/header_img/logo_icon.png') }}">
+                <img src="{{ url_for('static', filename='assets/images/homepage_assets/header_img/logo-text.png') }}">
+            </div>
+
+            <button class="nav-toggle" aria-expanded="false" aria-controls="navbar-links">
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+            </button>
+
+            <ul class="navbar-links" data-visible="false">
+                <li><a href="#Home" class="links">Home</a></li>
+                <li><a href="#DOS" class="links">DOS</a></li>
+                <li><a href="#DDOS" class="links">DDOS</a></li>
+                <li><a href="#About" class="links">About</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <header id="Home" class="header flex-element">
+        <section class="container">
+            <section class="header-elements split">
+                <section class="info-header property-left-header fade-in-from-left">
+                    <h3>WELCOME to:</h3>
+                    <h1>DISTRIBUTED Denial of Service Attack</h1>
+                    <p>Trust No One, Attack Everyone</p>
+                </section>
+                <section class="property-right-header fade-in-from-right">
+                    <img src="{{ url_for('static', filename='assets/images/homepage_assets/header_img/illustrations_hacker.png') }}" alt="Hacker Illustration">
+                </section>
+            </section>
+            <div class="back-header-icons laptop-back-icon">
+                <img src="{{ url_for('static', filename='assets/images/homepage_assets/header_img/illustrations_caution_laptop.png') }}">
+            </div>
+            <div class="back-header-icons ddos-back-icon">
+                <img src="{{ url_for('static', filename='assets/images/homepage_assets/header_img/illustrations_icons_ddos.png') }}">
+            </div>
+            <div class="back-header-icons bad-usb-back-icon">
+                <img src="{{ url_for('static', filename='assets/images/homepage_assets/header_img/illustrations_bad_usb.png') }}">
+            </div>
+            <div class="back-header-icons bad-packet-back-icon">
+                <img src="{{ url_for('static', filename='assets/images/homepage_assets/header_img/illustrations_bad_packet.png') }}">
+            </div>
+        </section>
+        <div class="gradient-top_cover"></div>
+    </header>
+    
+    <section class="attack-type-section dos-section flex-element section-animation" id="DOS">
+        <section class="container--narrow">
+            <section class="split">
+                <section class="info-attack-type property-left">
+                    <h1>DoS</h1>
+                    <p class="info-service">[ Service for Single Host or Botnets ]</p>
+                    <p class="info-paragraph">Denial of Service is a cyber attack where the perpetrator tries to make a machine
+                        or network resource unavailable to the intended users by disrupting the service of
+                        the host connected to the Internet temporarily or indefinitely.</p>
+                    <button class="btn-attack-service btn-attack-dos">
+                        <a href="{{ url_for("DOS_index") }}" class="API-dos-service">Try Service</a><span>
+                            <img src="{{ url_for('static', filename='assets/images/homepage_assets/Arrow 1.png') }}" onclick="window.open('{{ url_for("DOS_index") }}', '_self')">
+                        </span>
+                    </button>
+                </section>
+                <section class="property-right">
+                    <img class="attack-type-img" src="{{ url_for('static', filename='assets/images/homepage_assets/illustrations_dos_icons.png') }}" alt="DOS Attack Illustration">
+                </section>
+            </section>
+        </section>
+        <div class="gradient-top_cover"></div>
+    </section>
+    
+    <section class="attack-type-section ddos-section flex-element section-animation" id="DDOS">
+        <section class="container--narrow">
+            <section class="split">
+                <section class="property-left">
+                    <img class="attack-type-img" src="{{ url_for('static', filename='assets/images/homepage_assets/illustration_ddos_icons.png') }}" alt="DDOS Attack Illustration">
+                </section>
+                <section class="info-attack-type property-right">
+                    <h1>DDoS</h1>
+                    <p class="info-service">[ Service for Master CNC ]</p>
+                    <p class="info-paragraph">Distributed Denial of Service is a type of attack that is carried out by flooding
+                        internet network traffic on servers, systems, or networks. Generally this attack is
+                        carried out using several host computers of the attacker until the target
+                        computer cannot be accessed.</p>
+                    <button class="btn-attack-service btn-attack-ddos">
+                        Try Service<span>
+                            <img src="{{ url_for('static', filename='assets/images/homepage_assets/Arrow 1.png') }}">
+                        </span>
+                    </button>
+                </section>
+            </section>
+        </section>
+        <div class="gradient-top_cover"></div>
+    </section>
+
+    <footer class="about-section" id="About">
+        <section class="container property-bottom">
+            <p class="text-center">Copyright © 2023 product by</p>
+            <section class="product-owner-copyright split">
+                    <div class="about-owner-logo split">
+                        <img src="{{ url_for('static', filename='assets/images/homepage_assets/About-Logo.png') }}" alt="BIOHAZARD Logo">
+                    </div>
+                    <img src="{{ url_for('static', filename='/assets/images/homepage_assets/Line 7.png') }}">
+                    <p>DDoS Script 3 Team</p>
+            </section>
+            <section class="credit-box text-center">
+                <p class="sub-team">Infrastructure</p>
+                <p>Fikri Azhar Samosir</p>
+                <p>Ruben William Bakara</p>
+                <p class="sub-team">Application</p>
+                <p>Ghiffar Alfin Faiz</p>
+                <p>Ruben William Bakara</p>
+                <p>Muhammad Ridho Syahputra</p>
+                <p class="sub-team">Documentation</p>
+                <p>Muhammad Faaiz Muazi</p>
+                <p>Muhammad Derick Pascal</p>
+                <img src="{{ url_for('static', filename='/assets/images/homepage_assets/network_icon.png') }}" class="credit-box-icon network-icon">
+                <img src="{{ url_for('static', filename='/assets/images/homepage_assets/application_icon.png') }}" class="credit-box-icon application-icon">
+                <img src="{{ url_for('static', filename='/assets/images/homepage_assets/Documentation_icon.png') }}" class="credit-box-icon documentation-icon">
+            </section>
+        </section>
+    </footer>
+
+</body>
+</html>

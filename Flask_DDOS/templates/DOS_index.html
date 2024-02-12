@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project DDos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+
+    <!-- link CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/DOS_page_styles/DOS_page.css') }}" />
+    <script src="{{ url_for('static', filename='assets/js/DOS_page/script.js') }}" defer></script>
+</head>
+<body>
+    <nav class="navbar bg-dark">
+        <p>DDOS Attack</p>
+        <p>#ZeroTrust</p>
+    </nav>
+
+    <section class="bg-img">
+        <section class="container">
+            <section class="split syn-flood-split info-attack-type fade-in">
+                <h1>SYN FLOOD</h1>
+                <p>A SYN flood (half-open attack) is a type of denial-of-service (DDoS) attack 
+                    which aims to make a server unavailable to legitimate traffic by consuming 
+                    all available server resources. By repeatedly sending initial connection 
+                    request (SYN) packets, the attacker is able to overwhelm all available ports 
+                    on a targeted server machine, causing the targeted device to respond to 
+                    legitimate traffic sluggishly or not at all.</p>
+            </section>
+
+            <section class="split udp-flood-split info-attack-type display-none fade-in">
+                <h1>UDP FLOOD</h1>
+                <p>A UDP flood is a type of denial-of-service attack in which a large number 
+                    of User Datagram Protocol (UDP) packets are sent to a targeted server 
+                    with the aim of overwhelming that device’s ability to process and respond. 
+                    The firewall protecting the targeted server can also become exhausted as 
+                    a result of UDP flooding, resulting in a denial-of-service to legitimate traffic.</p>
+            </section>
+
+            <section class="split slowloris-split info-attack-type display-none fade-in">
+                <h1>SLOWLORIS</h1>
+                <p>Slowloris is a denial-of-service attack program which allows an attacker 
+                    to overwhelm a targeted server by opening and maintaining many 
+                    simultaneous HTTP connections between the attacker and the target.</p>
+            </section>
+        </section>
+    </section>
+    <section class="container-segmented">
+        <section class="segmented-btn-container">
+            <button
+                class="segmented-button segmented-button-syn-flood segmented-button-active"
+                data-attack="syn-flood"
+            ><span>SYN Flood</span></button>
+            <button
+                class="segmented-button segmented-button-udp-flood"
+                data-attack="udp-flood"
+            ><span>UDP Flood</span></button>
+            <button
+                class="segmented-button segmented-button-slowloris"
+                data-attack="slowloris"
+            ><span>Slowloris</span></button>
+        </section>
+    </section>
+    <section class="bg-light">
+        <section class="container">
+            <section class="split">
+                <section class="field-wrapper">
+                    <div class="target-ip">
+                        <label for="target-ip">Target IP/URL</label>
+                        <input type="text" id="target-ip-field" name="target-ip">
+                    </div>
+                    <div class="port-number">
+                        <label for="port-number">Port Number</label>
+                        <input type="number" id="port-number-field" name="port-number">
+                    </div>
+                    <div class="time-pause display-none">
+                        <label for="time-pause">Time Pause</label>
+                        <input type="number" id="time-pause-field" name="time-pause" placeholder="in seconds">
+                    </div>
+                    <div class="total-request display-none">
+                        <label for="total-request">Total Request</label>
+                        <input type="number" id="total-request-field" name="total-request">
+                    </div>
+                    <div class="attack-duration">
+                        <label for="attack-duration">Attack Duration</label>
+                        <input type="number" id="attack-duration-field" name="attack-duration" placeholder="in seconds">
+                    </div>
+                </section>
+                <section class="img-input syn-flood-img">
+                    <img src="{{ url_for('static', filename='assets/images/DOS_page_assets/syn-flood.png') }}" alt="syn flood illustration">
+                </section>
+                <section class="img-input udp-flood-img display-none">
+                    <img src="{{ url_for('static', filename='assets/images/DOS_page_assets/udp-flood.png') }}" alt="udp flood illustration">
+                </section>
+                <section class="img-input slowloris-img display-none">
+                    <img src="{{ url_for('static', filename='assets/images/DOS_page_assets/slowloris.png') }}" alt="slowloris illustration">
+                </section>
+            </section>
+        </section>
+        <button class="start-attack" href="#section-result">START ATTACK</button>
+    </section>
+
+    <section class="bg-accent" id="section-result">
+        <section class="container">
+            <p class="text-center flooding-result">FLOODING RESULT</p>
+            <section class="result">
+                <div class="text-result">
+                    <div class="img-banner-result">
+                        <img src="{{ url_for('static', filename='assets/images/DOS_page_assets/result_banner.png') }}" alt="DDOS Result Banner">
+                    </div>
+                </div>
+                <div class="text-result-slowloris display-none"></div>
+                <div class="lds-dual-ring display-none"></div>
+            </section>
+            <button type="button" class="stop-flooding">STOP FLOODING</button>
+        </section>
+    </section>
+
+    <footer class="bg-dark">
+        <p class="text-center">Copyright: Project Created by BIOHAZARD</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+pip install customtkinter==0.3
+pip install tk
+pip install pillow
+pip install paramiko
+pip install flask
